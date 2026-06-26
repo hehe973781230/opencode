@@ -35,3 +35,10 @@ jobs:
           distribution: goreleaser
           version: latest
           args: build --snapshot --clean
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: opencode-binaries
+          path: |
+            dist/opencode_darwin_arm64_v8.0/opencode
+            dist/opencode_darwin_amd64_v1/opencode
