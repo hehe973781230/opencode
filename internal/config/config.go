@@ -289,14 +289,15 @@ func setProviderDefaults() {
 
 	// Use this order to set the default models
 	// 1. Copilot
-	// 2. Anthropic
-	// 3. OpenAI
-	// 4. Google Gemini
-	// 5. Groq
-	// 6. OpenRouter
-	// 7. AWS Bedrock
-	// 8. Azure
-	// 9. Google Cloud VertexAI
+	// 2. MiniMax (private deployment default)
+	// 3. Anthropic
+	// 4. OpenAI
+	// 5. Google Gemini
+	// 6. Groq
+	// 7. OpenRouter
+	// 8. AWS Bedrock
+	// 9. Azure
+	// 10. Google Cloud VertexAI
 
 	// copilot configuration
 	if key := viper.GetString("providers.copilot.apiKey"); strings.TrimSpace(key) != "" {
@@ -304,6 +305,15 @@ func setProviderDefaults() {
 		viper.SetDefault("agents.summarizer.model", models.CopilotGPT4o)
 		viper.SetDefault("agents.task.model", models.CopilotGPT4o)
 		viper.SetDefault("agents.title.model", models.CopilotGPT4o)
+		return
+	}
+
+	// MiniMax configuration (default for private deployment)
+	if key := viper.GetString("providers.minimax.apiKey"); strings.TrimSpace(key) != "" {
+		viper.SetDefault("agents.coder.model", models.MiniMaxM3)
+		viper.SetDefault("agents.summarizer.model", models.MiniMaxM3)
+		viper.SetDefault("agents.task.model", models.MiniMaxM3)
+		viper.SetDefault("agents.title.model", models.MiniMaxM3)
 		return
 	}
 

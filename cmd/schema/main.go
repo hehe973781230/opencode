@@ -200,6 +200,7 @@ func generateSchema() map[string]any {
 		string(models.ProviderBedrock),
 		string(models.ProviderAzure),
 		string(models.ProviderVertexAI),
+		string(models.ProviderMiniMax),
 	}
 
 	providerSchema["additionalProperties"].(map[string]any)["properties"].(map[string]any)["provider"] = map[string]any{
