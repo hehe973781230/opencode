@@ -162,7 +162,7 @@ func NewProvider(providerName models.ModelProvider, opts ...ProviderClientOption
 		}, nil
 	case models.ProviderMiniMax:
 		clientOptions.openaiOptions = append(clientOptions.openaiOptions,
-			WithOpenAIBaseURL("https://api.minimax.io/v1"),
+			WithOpenAIBaseURL("https://api.minimaxi.com/v1"),
 		)
 		return &baseProvider[OpenAIClient]{
 			options: clientOptions,
