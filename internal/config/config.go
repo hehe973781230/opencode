@@ -310,10 +310,10 @@ func setProviderDefaults() {
 
 	// MiniMax configuration (default for private deployment)
 	if key := viper.GetString("providers.minimax.apiKey"); strings.TrimSpace(key) != "" {
-		viper.SetDefault("agents.coder.model", models.MiniMaxM3)
-		viper.SetDefault("agents.summarizer.model", models.MiniMaxM3)
-		viper.SetDefault("agents.task.model", models.MiniMaxM3)
-		viper.SetDefault("agents.title.model", models.MiniMaxM3)
+		viper.SetDefault("agents.coder.model", models.MiniMaxM27)
+		viper.SetDefault("agents.summarizer.model", models.MiniMaxM27)
+		viper.SetDefault("agents.task.model", models.MiniMaxM27)
+		viper.SetDefault("agents.title.model", models.MiniMaxM27)
 		return
 	}
 
